@@ -41,7 +41,13 @@ Other agents (Cursor, Copilot, Windsurf…) are outside the scripts: the skill s
 npx skills add ozkayas/agentic-repo-lint -g -a claude-code -a codex -a antigravity
 ```
 
-Without `-a`, the `skills` CLI asks which agents to install it for.
+Without `-a`, the `skills` CLI asks which agents to install it for. To pin a release instead of following `main`:
+
+```bash
+npx skills add ozkayas/agentic-repo-lint@v1.0.0 -g
+```
+
+Releases and what changed in each are in [CHANGELOG.md](CHANGELOG.md).
 
 Then, inside a repo, ask your agent to run it. In Claude Code:
 
