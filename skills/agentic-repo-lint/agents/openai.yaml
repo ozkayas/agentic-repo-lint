@@ -1,5 +1,5 @@
 interface:
   display_name: "Agentic repo lint"
-  short_description: "Audit what agents see in a repo: skills, MCP, instructions, permissions"
+  short_description: "Report the clutter agents load in a repo: unused, stale, misplaced, duplicated"
 policy:
   allow_implicit_invocation: false

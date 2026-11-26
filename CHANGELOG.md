@@ -2,9 +2,23 @@
 
 Versions follow [semver](https://semver.org):
 
-- **Patch** (`1.0.x`): bug fixes; the findings you already have stay the same.
-- **Minor** (`1.x.0`): new checks or config options; a run can raise new findings.
-- **Major** (`x.0.0`): a change that breaks your config or the findings you accepted (`accepted.json`), such as a renamed finding code or a new id format.
+- **Patch** (`2.0.x`): wording fixes; a run looks at the same things.
+- **Minor** (`2.x.0`): new areas or kinds of clutter; a run can raise new findings.
+- **Major** (`x.0.0`): a change to how a run works or to what the report contains.
+
+## v2.0.0 (2026-11-26)
+
+The skill is now a procedure; the bundled scripts are gone.
+
+- **The report is the product.** A run changes nothing. Applying findings is a separate step, taken only when you ask for it.
+- **No enforced layout.** Findings describe what is there, why it costs something and what you could do. Severity levels, the strict rules and the config file `~/.agents/agentic-repo-lint.json` are removed.
+- **No bundled scripts.** `lint.py`, `usage.py` and their tests are removed. The agent learns the OS and the agents in use, reads their current documentation where needed, and writes a throwaway script only if the machine calls for one.
+- **Verification by a subagent.** Candidate findings are handed over as bare claims to be refuted before they reach the report.
+- **Cleanup only.** Permission-risk checks and secret scanning are removed. A key met while reading is noted in one line, never printed.
+- **Skill verdicts no longer block the report.** They are part of it.
+- `references/policy.md` is replaced by `references/where-to-look.md`; `references/usage-evidence.md` and `references/applying.md` are new.
+
+**Upgrading from v1:** `~/.agents/agentic-repo-lint.json` and `~/.agents/lint-runs/` are no longer read; you can delete them. Findings you accepted with `--accept` are not carried over.
 
 ## v1.0.0 (2026-11-26)
 
